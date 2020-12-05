@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "828361367651",
+    "project_id": "projectthree-d4f19",
+    "storage_bucket": "projectthree-d4f19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828361367651:android:f524477e4d19f7cf171856",
+        "android_client_info": {
+          "package_name": "org.electricuniverse.project3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "828361367651-41tk86u4d2vfe7fi5ld6ugre75qaa8kr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQtucHAoNvkMwewi1zgdi2mw68dnaSIE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "828361367651-41tk86u4d2vfe7fi5ld6ugre75qaa8kr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
