@@ -8,7 +8,6 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,8 +23,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     private List<Map<String, ?>> md;    // list of all the movies
     private List<Map<String, ?>> md_filtered;    //list of all the filtered movies
     private ListFragment.OnItemSelectedListener onListItemClickListener = null;     //call back to the activity
-    // ListFragment.onItemSelectedListener clickListener;
-
+    //private OnListItemClickListener onListItemClickListener = null;
     public MyRecyclerAdapter(List<Map<String, ?>> list)     //constructor
     {
         md = md_filtered = list;
@@ -40,7 +38,8 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         public TextView movie_year;
         public ImageView poster_img;
 
-        public ViewHolder(View view) {
+        public ViewHolder(View view)
+        {
             super(view);
             movie_name = (TextView) view.findViewById(R.id.movie_name);
             movie_year = (TextView) view.findViewById(R.id.movie_year);
@@ -117,28 +116,31 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler, parent, false);
         final ViewHolder view_holder = new ViewHolder(v);
-        return view_holder;
+//        return view_holder;
 
 //        v.setOnClickListener(new View.OnClickListener()
 //        {
 //            @Override
-//            public void onClick(View v) {
-//                if (onListItemClickListener != null) {
-//                    onListItemClickListener.onListItemSelected(v,Integer.toString(md_filtered.get()));
+//            public void onClick(View v)
+//            {
+//                if (onListItemClickListener != null)
+//                {
+//                    onListItemClickListener.onItemClick(v, view_holder.getAdapterPosition());
 //                }
 //            }
 //        });
-////        v.setOnLongClickListener(new View.OnLongClickListener() {
-////            @Override
-////            public boolean onLongClick(View v) {
-////                if (onListItemClickListener != null) {
-////                    onListItemClickListener.onItemLongClick(v, view_holder.getAdapterPosition());
-////
-////                }
-////                return true;
-////            }
-////        });
-//        return view_holder;
+//        v.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                if (onListItemClickListener != null) {
+//                    onListItemClickListener.onItemLongClick(v, view_holder.getAdapterPosition());
+//
+//                }
+//                return true;
+//            }
+//        });
+        return view_holder;
+
     }
 
 
@@ -154,6 +156,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         holder.movie_year.setText(md_filtered.get(position).get("year").toString());
         holder.poster_img.setImageResource(Integer.parseInt(md_filtered.get(position).get("image").toString()));
         ViewCompat.setTransitionName(holder.poster_img, md_filtered.get(position).get("name").toString());
+
         holder.poster_img.setOnClickListener(new View.OnClickListener()
         {
             @Override
