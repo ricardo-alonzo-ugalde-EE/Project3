@@ -158,7 +158,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
             movie_name = view.findViewById(R.id.movie_name);
             movie_year = view.findViewById(R.id.movie_year);
             poster_img = view.findViewById(R.id.poster_photo);
-//            button = view.findViewById(R.id.button);
+            button = view.findViewById(R.id.button);
         }
 
         @Override
@@ -199,34 +199,34 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
             }
         });
 
-//        holder.button.setOnClickListener(new View.OnClickListener()
-//        {
-//            @Override
-//            public void onClick(View view) {
-//                PopupMenu popup = new PopupMenu((Context) onListItemClickListener, holder.button);
-//                popup.inflate(R.menu.options_menu);
-//                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-//                    @Override
-//                    public boolean onMenuItemClick(MenuItem menuItem)
-//                    {
-//                        switch(menuItem.getItemId()){
-//                            case R.id.more:
-//
-//                                database.getReference("Movie").child(md.get(position).key).setValue(null);
-//                                return true;
-//                            case R.id.duplicate:
-//                                Toast.makeText((Context) onListItemClickListener, "duplicate click", Toast.LENGTH_SHORT).show();
-//                                database.getReference("Movie").push().setValue(md.get(position));
-//                                return true;
-//                            default:
-//                                return false;
-//                        }
-//
-//                    }
-//                });
-//                popup.show();
-//            }
-//        });
+        holder.button.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popup = new PopupMenu((Context) onListItemClickListener, holder.button);
+                popup.inflate(R.menu.options_menu);
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem)
+                    {
+                        switch(menuItem.getItemId()){
+                            case R.id.more:
+
+                                database.getReference("Movie").child(md.get(position).key).setValue(null);
+                                return true;
+                            case R.id.duplicate:
+                                Toast.makeText((Context) onListItemClickListener, "duplicate click", Toast.LENGTH_SHORT).show();
+                                database.getReference("Movie").push().setValue(md.get(position));
+                                return true;
+                            default:
+                                return false;
+                        }
+
+                    }
+                });
+                popup.show();
+            }
+        });
 
 
     }

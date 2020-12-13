@@ -17,6 +17,8 @@ import android.provider.MediaStore;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -110,6 +112,14 @@ public class AddNewMovie extends AppCompatActivity implements PopupMenu.OnMenuIt
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_movie);
+
+
+        //COLOR SCHEMES
+        Window window = AddNewMovie.this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(ContextCompat.getColor(AddNewMovie.this, R.color.Black));
+
         moviename=findViewById(R.id.displayMovieText);
         movieyear=findViewById(R.id.yearText);
         moviedir=findViewById(R.id.displayDirectorText);

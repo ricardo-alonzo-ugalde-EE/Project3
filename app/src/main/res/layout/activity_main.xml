@@ -11,6 +11,9 @@
     <androidx.appcompat.widget.Toolbar
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/my_toolbar"
+        app:titleTextColor="@color/white"
+        android:backgroundTint="@color/DarkGoldenrod"
+        app:subtitleTextColor="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"

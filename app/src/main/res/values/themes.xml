@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.Project3" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/DarkGray</item>
+        <item name="colorPrimary">@color/Black</item>
         <item name="colorAccent">@color/SteelBlue</item>
-        <item name="colorPrimaryVariant">@color/DimGray</item>
+        <item name="colorPrimaryVariant">@color/DarkRed</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/DodgerBlue</item>
@@ -14,4 +14,14 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/DarkGoldenrod</item>
+        <item name="colorControlActivated">@color/DarkGoldenrod</item>
+    </style>
+
+    <style name="FloatingActionButton" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/DarkGoldenrod</item>
+        <item name="colorControlActivated">@color/DarkGoldenrod</item>
+    </style>
+
 </resources>

@@ -37,15 +37,16 @@ import java.util.Map;
 
 public class HomeActivity extends AppCompatActivity implements ListFragment.OnItemSelectedListener{
 
-    //private RecyclerView recycler_view;
-    //private MovieData md=new MovieData();
-    //private final MyRecyclerAdapter myRecyclerAdapter = new MyRecyclerAdapter(md.getMoviesList(), recycler_view);
+    private RecyclerView recycler_view;
+    private MovieData md=new MovieData();
+    private final MyRecyclerAdapter myRecyclerAdapter = new MyRecyclerAdapter();
     private FirebaseAuth mAuth;
     private QueryListener queryListener;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         queryListener = new ListFragment();
@@ -54,18 +55,21 @@ public class HomeActivity extends AppCompatActivity implements ListFragment.OnIt
         getSupportFragmentManager().beginTransaction().replace(R.id.main_container, (Fragment) queryListener).commit();
         mAuth = FirebaseAuth.getInstance();
 
+        //COLOR SCHEMES
+        Window window = HomeActivity.this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(ContextCompat.getColor(HomeActivity.this, R.color.Black));
 
-
-
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener()
-//        {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(HomeActivity.this, AddNewMovie.class);
-//                startActivity(intent);
-//            }
-//        });
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, AddNewMovie.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

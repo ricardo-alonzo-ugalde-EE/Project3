@@ -36,7 +36,7 @@ public class SignupLogin extends AppCompatActivity {
         Window window = SignupLogin.this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.setStatusBarColor(ContextCompat.getColor(SignupLogin.this, R.color.colorPrimaryDark));
+        window.setStatusBarColor(ContextCompat.getColor(SignupLogin.this, R.color.Black));
         email=findViewById(R.id.emailText);
         password=findViewById(R.id.passwordText);
         phonenumber=findViewById(R.id.phoneNumberText);
